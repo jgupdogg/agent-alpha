@@ -1,12 +1,14 @@
-"use client";
+"use client"; // Add this line at the very top
 
 import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 import type { Schema } from "@/amplify/data/resource";
-import "./../app/app.css";
+import "./globals.css"; // Ensure global styles are imported
 import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
+import { Button } from './components/button';
+
 
 Amplify.configure(outputs);
 
@@ -32,18 +34,16 @@ export default function App() {
   }
 
   return (
-    <main>
-      <h1>My todos</h1>
-      <button onClick={createTodo}>+ new</button>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo.id}>{todo.content}</li>
-        ))}
-      </ul>
-      <div>
+    <main className="p-4">
+      <h1 className="text-2xl font-bold mb-4">My todos</h1>
+      <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={createTodo}>+ new</button>
+      <Button variant="default" size="lg">Default Button</Button>
+      <Button variant="destructive" size="sm">Destructive Button</Button>
+      <Button variant="outline">Outline Button</Button>
+      <div className="mt-4">
         🥳 App successfully hosted. Try creating a new todo.
         <br />
-        <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
+        <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/" className="text-blue-500 underline">
           Review next steps of this tutorial.
         </a>
       </div>
