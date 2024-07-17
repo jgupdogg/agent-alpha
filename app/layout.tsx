@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css"; 
 import "./app.css"; 
-import Navbar from './components/navbar'; // Import Navbar
-import Footer from './components/Footer'; // Import Footer
+import ClientLayout from './components/ClientLayout'; // Import ClientLayout
+import Navbar from './components/navbar';
+import Footer from './components/Footer';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} h-full flex flex-col`}>
-        <Navbar /> {/* Add Navbar here */}
-        <main className="flex-1 mt-16 w-full flex flex-col justify-center items-center">
+      <body className={`${inter.className} h-full w-full m-0`}>
+        <Navbar />
+        <ClientLayout>
           {children}
-        </main>
-        <Footer /> {/* Add Footer here */}
+        </ClientLayout>
+        
       </body>
     </html>
   );
