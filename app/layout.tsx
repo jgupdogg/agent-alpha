@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css"; 
 import "./app.css"; 
 import Navbar from './components/navbar'; // Import Navbar
+import Footer from './components/Footer'; // Import Footer
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,13 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} h-full`}>
+      <body className={`${inter.className} h-full flex flex-col`}>
         <Navbar /> {/* Add Navbar here */}
-        <main className="flex-1 flex flex-col justify-center items-center mt-16">
+        <main className="flex-1 mt-16 w-full flex flex-col justify-center items-center">
           {children}
         </main>
+        <Footer /> {/* Add Footer here */}
       </body>
     </html>
   );
 }
-

@@ -8,7 +8,8 @@ import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
 import { Button } from './components/button';
-
+import Image from 'next/image';
+import { Typography, Box } from '@mui/material';
 
 Amplify.configure(outputs);
 
@@ -34,19 +35,22 @@ export default function App() {
   }
 
   return (
-    <main className="p-4">
-      <h1 className="text-2xl font-bold mb-4">My todos</h1>
-      <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={createTodo}>+ new</button>
-      <Button variant="default" size="lg">Default Button</Button>
-      <Button variant="destructive" size="sm">Destructive Button</Button>
-      <Button variant="outline">Outline Button</Button>
-      <div className="mt-4">
-        🥳 App successfully hosted. Try creating a new todo.
-        <br />
-        <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/" className="text-blue-500 underline">
-          Review next steps of this tutorial.
-        </a>
+    <div className="relative bg-frames-pattern w-full h-screen flex flex-col items-center justify-center text-center py-24 border-glow">
+      <div className="w-96 h-96 rounded-full bg-gradient-to-r from-blue-500 to-green-500 opacity-50"></div>
+      <div className="relative flex flex-col items-center justify-center w-full">
+        <Typography variant="h2" className="text-white font-bold mb-4">
+          Welcome to Agent Alpha
+        </Typography>
+        <Typography variant="h6" className="text-white mb-8">
+          Freelance Data Projects & Portfolio Showcase
+        </Typography>
+        <Box className="flex items-center mb-4 text-white">
+          <Typography variant="body2" className="mr-2">
+            Powered by:
+          </Typography>
+          <Image src="/agent_alpha_name.png" alt="Mobile Logo" width={100} height={50} />
+        </Box>
       </div>
-    </main>
+    </div>
   );
 }
