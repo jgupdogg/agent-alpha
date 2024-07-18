@@ -5,11 +5,11 @@ import { FaGithub } from 'react-icons/fa';
 
 const projects = [
   {
-    title: "Project One",
-    description: "Description of project one.",
+    title: "Solana Top Traders",
+    description: "Network analysis of top traders",
     date: "2023-07-16",
-    link: "#",
-    github: "https://github.com/username/project-one"
+    link: "https://main.d2pshd5agb0zvi.amplifyapp.com/",
+    github: "https://github.com/jgupdogg/network_viz"
   },
   {
     title: "Project Two",
